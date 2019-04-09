@@ -1,41 +1,47 @@
 // Your code goes here
 
-document.addEventListener('mouseover', (event) => {
-  console.log('mouseover');
+const navigation = document.querySelector('.nav-container nav');
+navigation.addEventListener('mouseover', (event) => {
+  event.target.style.fontSize = '1.8rem';
+});
+
+navigation.addEventListener('mouseout', (event) => {
+  event.target.style.fontSize = '1.6rem';
+});
+
+const destination = document.querySelector('.content-pick');
+destination.addEventListener('mousedown', (event) => {
+  if (event.target.matches('.btn')) {
+    event.target.style.transform = 'scale(0.95)';
+  }
+})
+
+destination.addEventListener('mouseup', (event) => {
+  if (event.target.matches('.btn')) {
+    event.target.style.transform = 'scale(1)';
+  }
 });
 
 document.addEventListener('keydown', (event) => {
-  console.log('keydown');
-});
+  if (event.keyCode === 72 && event.altKey) {
+    event.stopImmediatePropagation();
+    console.log('Okay, maybe alerts are too old school, let\'s use the console');
+  }
+})
 
-document.addEventListener('wheel', (event) => {
-  console.log('wheel');
-});
-
-document.addEventListener('drag', (event) => {
-  console.log('drag');
-});
-
-document.addEventListener('load', (event) => {
-  console.log('load');
-});
-
-document.addEventListener('focus', (event) => {
-  console.log('focus');
-});
-
-document.addEventListener('resize', (event) => {
-  console.log('resize');
-});
-
-document.addEventListener('scroll', (event) => {
-  console.log('scroll');
-});
-
-document.addEventListener('select', (event) => {
-  console.log('select');
+// Stopping propagation on the above event, will prevent the alert from showing up.
+document.addEventListener('keydown', (event) => {
+  if (event.keyCode === 72 && event.altKey) {
+    alert('Alerts are the best Javascript invention EVAR!');
+  }
 });
 
 document.addEventListener('dblclick', (event) => {
-  console.log('dblclick');
+  if (event.ctrlKey) {
+    if (event.target.classList.contains('test-border')) {
+      event.target.classList.remove('test-border');
+    } else {
+      event.target.classList.add('test-border');
+    }
+  }
 });
