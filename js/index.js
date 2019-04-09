@@ -9,6 +9,10 @@ navigation.addEventListener('mouseout', (event) => {
   event.target.style.fontSize = '1.6rem';
 });
 
+navigation.addEventListener('click', (event) => {
+  event.preventDefault();
+})
+
 const destination = document.querySelector('.content-pick');
 destination.addEventListener('mousedown', (event) => {
   if (event.target.matches('.btn')) {
@@ -44,4 +48,8 @@ document.addEventListener('dblclick', (event) => {
       event.target.classList.add('test-border');
     }
   }
+});
+
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
 });
