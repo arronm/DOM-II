@@ -13,6 +13,8 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  order: 100;
+  position: relative;
 }
 
 .block--red {
