@@ -1,5 +1,6 @@
 // Your code goes here
 
+
 const navigation = document.querySelector('.nav-container nav');
 navigation.addEventListener('mouseover', (event) => {
   event.target.style.fontSize = '1.8rem';
@@ -52,4 +53,12 @@ document.addEventListener('dblclick', (event) => {
 
 document.addEventListener('contextmenu', (event) => {
   event.preventDefault();
+});
+
+document.addEventListener('touchstart', (event) => {
+  console.log(event.target);
+  if (event.target.matches('img')) {
+    // TweenMax.to(event.target, 2, { rotationY: '+=180' });
+    TweenMax.to(event.target, 0.5, {rotationY:'+=360'});
+  }
 });
