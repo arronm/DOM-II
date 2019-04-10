@@ -13,24 +13,30 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  position: relative;
 }
 
 .block--red {
   background-color: red;
+  order: 1;
 }
 
 .block--blue {
   background-color: blue;
+  order: 2;
 }
 
 .block--green {
   background-color: green;
+  order: 3;
 }
 
 .block--pink {
   background-color: pink;
+  order: 4;
 }
 
 .block--gray {
   background-color: gray;
+  order: 5;
 }
